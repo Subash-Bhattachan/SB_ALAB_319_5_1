@@ -1,0 +1,6 @@
+mongoose is a package that connect mongodb using node.js
+mongoose works with: 
+schema - that defines the structure of the data, like user schema has user name, email, address etc. in key value pairs
+using schema we make model, that is the schema in actual form that we can use
+using model we do CRUD operation
+
