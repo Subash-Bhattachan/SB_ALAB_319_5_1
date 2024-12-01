@@ -73,9 +73,9 @@ gradeSchema.index({ learner_id: 1, class_id: 1 });
 
 export default mongoose.model("Grade", gradeSchema);
 
-// collMod command was used to ensure that the schema validation rules were applied
-// this is especially since the validation rules were set by MongoDB earlier for lab 319.4.1
-// db.runCommand ({ collMod: "grades"}); was used in MongoDB shell
+// collMod command was used in mongoshell to ensure that the new schema validation rules were applied
+// db.runCommand({ collMod: "grades" })
+// this is especially since the old validation rules were set by MongoDB earlier for lab 319.4.1
 // then various valid and invalid datas were inserted to test the above validation rules like below
 // db.grades.insertOne({
 //   learner_id: 2,
