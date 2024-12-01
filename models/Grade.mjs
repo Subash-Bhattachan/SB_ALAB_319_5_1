@@ -72,3 +72,18 @@ gradeSchema.index({ learner_id: 1, class_id: 1 });
 
 
 export default mongoose.model("Grade", gradeSchema);
+
+// collMod command was used to ensure that the schema validation rules were applied
+// this is especially since the validation rules were set by MongoDB earlier for lab 319.4.1
+// db.runCommand ({ collMod: "grades"}); was used in MongoDB shell
+// then various valid and invalid datas were inserted to test the above validation rules like below
+// db.grades.insertOne({
+//   learner_id: 2,
+//   class_id: 350, // Invalid (must be <= 300)
+//   scores: [
+//     { type: "quiz", score: 80 }
+//   ]
+// });
+// it seems to be working correctly
+// validationAction: warn is not supported in Mongoose schema file, but the document
+// will still get inserted but with a warning on the server displayed
