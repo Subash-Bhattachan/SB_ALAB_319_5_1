@@ -76,7 +76,6 @@ router.get("/stats", async (req, res) => {
   //.toArray();
   //const totalLearners = await Grade.countDocuments(); 
   const totalLearners = (await Grade.distinct("learner_id")).length;
-  //const totalLearners = await Grade.distinct("learner_id").then((ids) => ids.length);
   const learnersWithOver70 = result.length; 
   const percentageOver70 = ((learnersWithOver70 / totalLearners) * 100 ).toFixed(2);
 
@@ -170,21 +169,6 @@ router.get("/stats/:id", async (req, res) => {
     else res.send({learnersWithOver70, totalLearners, percentageover70}).status(200);
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
