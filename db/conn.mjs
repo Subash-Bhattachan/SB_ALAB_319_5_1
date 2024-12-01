@@ -14,3 +14,7 @@ try {
 let db = conn.db("sample_training");
 
 export default db;
+
+
+// not used in Mongoose 
+// only used while Mongodb
